@@ -46,6 +46,7 @@ module Fixation
   # Integer identifiers are values less than 2^30. UUIDs are RFC 4122 version 5 SHA-1 hashes.
   #
   # Uses the ActiveRecord fixtures method for compatibility.
+  require 'active_record/fixtures'
   if ActiveRecord::FixtureSet.method(:identify).arity == 1
     def self.identify(label, _column_type = :integer)
       ActiveRecord::FixtureSet.identify(label)
